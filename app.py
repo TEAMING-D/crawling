@@ -21,7 +21,7 @@ def crawl(url):
         return jsonify({'error': 'URL parameter is required'}), 400
 
     try:
-        service = ChromeService(executable_path=ChromeDriverManager().install())
+        service = ChromeService(executable_path='/usr/local/bin/chromedriver')
         driver = webdriver.Chrome(service=service)
         driver.get(url)
 
